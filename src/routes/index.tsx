@@ -1,7 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { useGetUsers } from "./layout";
 
 export default component$(() => {
+  const users = useGetUsers();
+
   return (
     <>
       <h1>Hi 👋</h1>
@@ -10,6 +13,12 @@ export default component$(() => {
         <br />
         Happy coding.
       </div>
+
+      <hr />
+
+      {users.value.map((user) => (
+        <div key={user.id}>{user.email}</div>
+      ))}
     </>
   );
 });
