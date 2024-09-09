@@ -41,5 +41,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "eduard-qwik-deno-t-30"
-          entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
-          root: "dist"
+          entrypoint: "entry.deno.js"
+          root: "server"
